@@ -1,0 +1,17 @@
+version: '1'
+services:
+  postgres:
+    image: 'postgres:latest'
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=changeit
+      - PGPORT=5432
