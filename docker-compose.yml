@@ -4,7 +4,7 @@ services:
     image: 'postgres:latest'
     restart: always
     environment:
-      - POSTGRES_PASSWORD=changeit
+      - POSTGRES_PASSWORD=changeYourDBPasswordOverHere
   api:
     build:
       dockerfile: Dockerfile
@@ -18,8 +18,10 @@ services:
       - ./server:/app
       - /app/node_modules
     environment:
+      - APP_KEY=changeYourKeyOverHere
+      - SESSION_EXPIRES_IN=24h # SESSION WILL EXPIRES IN 24 hours
       - PGUSER=postgres
       - PGHOST=postgres
       - PGDATABASE=postgres
-      - PGPASSWORD=changeit
+      - PGPASSWORD=changeYourDBPasswordOverHere
       - PGPORT=5432

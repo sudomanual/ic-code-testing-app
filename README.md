@@ -1,1 +1,47 @@
 ic-code-testing-app
+
+**Installation**
+Search and replace `changeYourDBPasswordOverHere` to change db password and `changeYourKeyOverHere` to change the app key.
+```yaml
+version: '3'
+services:
+  postgres:
+    image: 'postgres:latest'
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=changeYourDBPasswordOverHere
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "80:3000"
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    environment:
+      - APP_KEY=changeYourKeyOverHere
+      - SESSION_EXPIRES_IN=24h # SESSION WILL EXPIRES IN 24 hours
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=changeYourDBPasswordOverHere
+      - PGPORT=5432
+```
+
+
+**Build and Run Server with Docker**
+
+```bash
+cd ic-code-testing-app/
+
+docker-compose build
+ 
+docker-compose up -d
+
+```
+
+api will be accessible through http://localhost:80 
