@@ -24,7 +24,7 @@ services:
       - /app/node_modules
     environment:
       - APP_KEY=changeYourKeyOverHere
-      - SESSION_EXPIRES_IN=24h # SESSION WILL EXPIRES IN 24 hours
+      - SESSION_EXPIRES_IN=24h # SESSION WILL EXPIRE IN 24 hours
       - PGUSER=postgres
       - PGHOST=postgres
       - PGDATABASE=postgres

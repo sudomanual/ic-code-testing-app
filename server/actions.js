@@ -42,8 +42,8 @@ export const authGuard = (req, res, next) => {
 
 /**
  * Encrypt text
- * @param password
- * @param callback
+ * @param text
+ * @returns {{encryptedData: string, iv: string}}
  */
 export const encrypt = (text) => {
     let cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(secret), iv);
