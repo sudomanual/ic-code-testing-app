@@ -8,4 +8,5 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "run", "start"]
+# TODO change dev to start when you are done
+CMD ["npm", "run", "dev"]
