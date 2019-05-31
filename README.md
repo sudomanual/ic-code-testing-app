@@ -1,6 +1,6 @@
-ic-code-testing-app
+#**Installation**
 
-**Installation**
+Edit the yaml `file docker-compose.yml`
 Search and replace `changeYourDBPasswordOverHere` to change db password and `changeYourKeyOverHere` to change the app key.
 ```yaml
 version: '3'
