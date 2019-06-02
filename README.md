@@ -36,6 +36,11 @@ services:
 **Build and Run Server with Docker**
 
 ```bash
+
+cd ic-code-testing-app/server
+
+npm install
+
 cd ic-code-testing-app/
 
 docker-compose build
@@ -45,3 +50,25 @@ docker-compose up -d
 ```
 
 api will be accessible through http://localhost:80 
+
+
+**Build and Run Phone App**
+
+Create the environment file.
+```bash
+cd ic-code-testing-app/phone
+
+cp template.env .env
+```
+
+```bash
+cd ic-code-testing-app/phone
+
+npm install
+ 
+react-native run-ios
+```
+
+Once you are in the iphone emulator go to: `Setting > Developer` and at the very bottom toggle `Allow Http Services` to be on.
+
+
