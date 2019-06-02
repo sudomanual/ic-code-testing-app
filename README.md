@@ -1,7 +1,7 @@
 #**Installation**
 
 Edit the yaml `file docker-compose.yml`
-Search and replace `changeYourDBPasswordOverHere` to change db password and `changeYourKeyOverHere` to change the app key.
+Search and replace `changeYourDBPasswordOverHere` to change db password and `changeYourKeyOverHere` to change the app key to something like this `Lo3ywq8pQTZbqCitg3stnJFAqwKy084N`.
 ```yaml
 version: '3'
 services:
