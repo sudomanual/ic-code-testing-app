@@ -9,7 +9,6 @@ import Validator from 'node-input-validator'
 import dbCredentials from './credentials/db'
 import { secret, expiresIn } from './credentials/auth'
 import { authGuard, encrypt } from './actions'
-import { authGuard, encrypt } from './actions'
 
 // Setting up Express.js server
 const app = express()
