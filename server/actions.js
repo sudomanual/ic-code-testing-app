@@ -1,8 +1,6 @@
 import jwt from "jsonwebtoken"
 import { secret } from "./credentials/auth"
-const crypto = require('crypto');
-const algorithm = 'aes-256-cbc';
-const iv = crypto.randomBytes(16);
+import crypto from "crypto"
 
 /**
  * Auth Guard is middleware provide routes security
@@ -13,8 +11,8 @@ const iv = crypto.randomBytes(16);
  * @constructor
  */
 export const authGuard = (req, res, next) => {
-    let token = req.headers['x-access-token'] || req.headers['authorization'] // Express headers are auto converted to lowercase
-    if (token.startsWith('Bearer ')) {
+    let token = req.headers['x-access-token'] || req.headers['Authorization'] || req.headers['authorization'] // Express headers are auto converted to lowercase
+    if (typeof token != "undefined" && token.startsWith('Bearer ')) {
         // Remove Bearer from string
         token = token.slice(7, token.length)
     }
@@ -39,15 +37,14 @@ export const authGuard = (req, res, next) => {
     }
 };
 
-
 /**
  * Encrypt text
  * @param text
  * @returns {{encryptedData: string, iv: string}}
  */
 export const encrypt = (text) => {
-    let cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(secret), iv);
-    let encrypted = cipher.update(text);
-    encrypted = Buffer.concat([encrypted, cipher.final()]);
-    return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
-}
+    let encrypted = crypto.createHmac('sha256', secret)
+        .update(text)
+        .digest('hex')
+    return encrypted;
+};

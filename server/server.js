@@ -9,6 +9,7 @@ import Validator from 'node-input-validator'
 import dbCredentials from './credentials/db'
 import { secret, expiresIn } from './credentials/auth'
 import { authGuard, encrypt } from './actions'
+import { authGuard, encrypt } from './actions'
 
 // Setting up Express.js server
 const app = express()
@@ -36,7 +37,7 @@ app.get('/', (req, res) => {
 });
 
 // Login route
-app.post('/user', async (req, res) => {
+app.post('/login', async (req, res) => {
     const { username, password } = req.body
 
     // Use your DB ORM logic here to find user and compare password
@@ -56,6 +57,7 @@ app.post('/user', async (req, res) => {
     res.json({
         success: true,
         message: 'Successfully user signed in!',
+        user,
         token
     })
 });
@@ -63,6 +65,7 @@ app.post('/user', async (req, res) => {
 // Register route
 app.put('/user', async (req, res) => {
     const { username, password } = req.body
+
     let validator = new Validator( req.body, {
         username:'required|minLength:2|maxLength:30',
         password: 'required|minLength:6|maxLength:25'
@@ -85,8 +88,8 @@ app.put('/user', async (req, res) => {
     })
 });
 
-// Get user route
-app.get('/user', authGuard, async (req, res) => {
+// Gets user and check for valid token
+app.patch('/user', authGuard, async (req, res) => {
     const { id } = req.decoded
     res.json({
         success: true,
