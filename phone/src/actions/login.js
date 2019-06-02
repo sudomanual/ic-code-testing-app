@@ -8,7 +8,9 @@ import {
 
 /**
  * Log the user in
- * @param data
+ * @param username
+ * @param password
+ * @param navigation
  * @param onSuccess
  * @returns {Function}
  */

@@ -9,7 +9,8 @@ import {
 
 /**
  * Register new user
- * @param data
+ * @param username
+ * @param password
  * @param onSuccess
  * @returns {Function}
  */
@@ -37,6 +38,7 @@ export const resetRegister = () => {
 
 /**
  * Update register errors
+ * @param errors
  * @returns {Function}
  */
 export const updateRegisterErrors = (errors) => {

@@ -46,7 +46,6 @@ export const updateAuth = (user) => {
 /**
  * Logout dispatch and navigate to Login route
  * @param navigation
- * @param routeName
  * @returns {Function}
  */
 export const logout = (navigation) => {
