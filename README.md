@@ -69,6 +69,6 @@ npm install
 react-native run-ios
 ```
 
-Once you are in the iphone emulator go to: `Setting > Developer` and at the very bottom toggle `Allow Http Services` to be on.
+Once you are in the iphone emulator go to: `Settings > Developer` and at the very bottom toggle `Allow Http Services` to be on.
 
 
