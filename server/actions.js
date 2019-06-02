@@ -40,7 +40,7 @@ export const authGuard = (req, res, next) => {
 /**
  * Encrypt text
  * @param text
- * @returns {{encryptedData: string, iv: string}}
+ * @returns {PromiseLike<ArrayBuffer>}
  */
 export const encrypt = (text) => {
     let encrypted = crypto.createHmac('sha256', secret)
