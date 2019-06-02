@@ -1,13 +1,13 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from "react-navigation"
 
 // App Screens
-import Home from '../screens/Home';
+import Home from "../screens/Home"
 
 export default createStackNavigator({
     Home: {
         screen: Home
     },
 }, {
-    initialRouteKey: 'Home',
-    headerMode: 'none',
-})
+    initialRouteKey: "Home",
+    headerMode: "none",
+});

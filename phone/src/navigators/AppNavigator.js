@@ -1,8 +1,8 @@
-import { createDrawerNavigator, createAppContainer } from 'react-navigation'
-import AuthStackNavigator from './AuthStackNavigator'
-import AppStackNavigator from './AppStackNavigator'
-import AuthLoading from '../screens/AuthLoading'
-import Drawer from './Drawer'
+import { createDrawerNavigator, createAppContainer } from "react-navigation"
+import AuthStackNavigator from "./AuthStackNavigator"
+import AppStackNavigator from "./AppStackNavigator"
+import AuthLoading from "../screens/AuthLoading"
+import Drawer from "./Drawer"
 
 const AppNavigator = createDrawerNavigator({
     AuthLoading: {
@@ -11,7 +11,7 @@ const AppNavigator = createDrawerNavigator({
     AuthStackNavigator: AuthStackNavigator,
     AppStackNavigator: AppStackNavigator
 }, {
-    initialRouteName: 'AuthLoading',
+    initialRouteName: "AuthLoading",
     contentComponent: Drawer,
     drawerWidth: 250,
 });
