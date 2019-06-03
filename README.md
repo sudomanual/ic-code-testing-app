@@ -36,11 +36,6 @@ services:
 **Build and Run Server with Docker**
 
 ```bash
-
-cd ic-code-testing-app/server
-
-npm install
-
 cd ic-code-testing-app/
 
 docker-compose build
