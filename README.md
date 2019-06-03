@@ -69,6 +69,7 @@ Once you are in the iphone emulator go to: `Settings > Developer` and at the ver
 
 
 
-**Note:** make sure you have docker, npm, react-native, watchman, and xcode installed 
+**Note:** make sure you have docker, npm, react-native, watchman, and xcode installed.
+and if you have any problem please feel free to shoot me an email to: alan@elias.fyi
 
 
