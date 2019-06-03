@@ -67,7 +67,7 @@ react-native run-ios
 
 Once you are in the iphone emulator go to: `Settings > Developer` and at the very bottom toggle `Allow Http Services` to be on.
 
-
+**Note:** if your localhost port 80 is used by different proccess you can chenage the api port from the yaml file look for line #21 `- "80:3000"` and change the port `80` to what ever you like and make sure you add the port to the `.env` file in the phone folder look for line #1 `API_URL="http://localhost/"` and append your port to api url like this `http://localhost:<port>/`.
 
 **Note:** make sure you have docker, npm, react-native, watchman, and xcode installed.
 and if you have any problem please feel free to shoot me an email to: alan@elias.fyi
