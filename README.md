@@ -55,6 +55,7 @@ cd ic-code-testing-app/phone
 
 cp template.env .env
 ```
+**Note:** make sure the file `.env` existed in the phone folder. if not use your ide to copy paste or create new file by any editor you like. 
 
 ```bash
 cd ic-code-testing-app/phone
@@ -68,6 +69,6 @@ Once you are in the iphone emulator go to: `Settings > Developer` and at the ver
 
 
 
-Note: make sure you have docker, npm, react-native, watchman, and xcode installed 
+**Note:** make sure you have docker, npm, react-native, watchman, and xcode installed 
 
 
